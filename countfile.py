@@ -1,9 +1,7 @@
-f=open("essay2.txt",'r')
-count=0
-for lines in f:
-	text=lines.split()
-	for _ in text:
-		count+=1
+def filecount(filename):
+	with open(filename,'r') as f:
+		arr = [len(line.split(" ")) for line in f.readlines()]
+	return sum(arr)
 
-print("total no of words:",count)
-f.close()
+print(filecount("Documents/abstract.txt"))
+
